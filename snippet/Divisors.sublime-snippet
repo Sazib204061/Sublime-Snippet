@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+vlli Divisors(lli n)  //O(sqrt(N))
+{
+    vlli divisor;
+    for(lli i = 1; i*i<=n; i++)
+    {
+        if(i*i==n)
+        {
+            divisor.push_back(i);
+        }
+        else if(n%i==0)
+        {
+            divisor.push_back(i);
+            divisor.push_back(n/i);
+        }
+    }
+    return divisor;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Divisors</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

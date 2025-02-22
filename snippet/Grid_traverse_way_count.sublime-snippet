@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+//(r1,c1) cell থেকে (r2,c2) cell এ কত ভাবে যাওয়া যায় তা return করে।
+lli Grid_traverse_way_count(lli r1, lli c1, lli r2, lli c2)
+{
+    lli n = r2-r1, m = c2-c1;
+    lli top = fact[n+m];    //(N+M)!
+    lli down = (Inverse_Mod(fact[n])*Inverse_Mod(fact[m]))%M; //inverse mod of N!*M!
+    return (top*down)%M;  //((n+m)!/(n!*m!))%M
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Grid_traverse_way_count</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

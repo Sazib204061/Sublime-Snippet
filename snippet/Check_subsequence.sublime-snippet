@@ -1,0 +1,39 @@
+<snippet>
+	<content><![CDATA[
+bool B_is_subsequence_of_A(vector<long long>&A, vector<long long>&B)
+{
+    long long n = A.size(), m = B.size(), ai = 0;
+    for(long long bi = 0; bi<m; bi++)
+    {
+        while(1)
+        {
+            //cout<<bi<<" "<<ai<<nl;
+            /*-------------------
+            
+            A = [2 7 0 2 1]
+            B = [2 0 1]
+
+            -------------------*/
+            if(ai>=n)return false;
+            if(A[ai]==B[bi])
+            {
+                if(bi==m-1)
+                {
+                    return true;
+                }
+                ai++;
+                break;
+            }
+            else
+            {
+                ai++;
+            }
+        }
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Check_subsequence</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

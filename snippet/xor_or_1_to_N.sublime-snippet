@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+lli xor_or_1_to_N(lli n)
+{
+    if(n%4==0)return n;
+    if(n%4==1)return 1;
+    if(n%4==2)return n+1;
+    else return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>xor_or_1_to_N</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

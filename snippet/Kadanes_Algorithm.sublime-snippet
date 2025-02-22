@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+void kadanes(vector<ll>&ar)
+{ //find maximum sub array sum and print this subarray
+    ll n = ar.size(), sum = 0, max_sum = LLONG_MIN, start = -1, end = -1;
+    for(ll i = 0; i<n; i++)
+    {
+        if(sum == 0)
+        {
+            start = i;
+        }
+        sum+=ar[i];
+        if(sum>max_sum)
+        {
+            max_sum = sum;
+            end = i;
+        }
+        if(sum<0)sum = 0;
+    }
+
+    cout<<"Maximum Sum = "<<max_sum<<nl;
+    cout<<"Maximim Sum Subarray : ";
+    for(start; start<=end; start++)
+    {
+        cout<<ar[start]<<" ";
+    }
+    cout<<nl;
+}]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Kadanes_Algorithm</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

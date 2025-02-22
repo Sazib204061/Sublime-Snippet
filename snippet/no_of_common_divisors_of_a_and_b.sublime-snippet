@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+lli no_of_common_divisors_of_a_and_b(lli n, lli a, lli b)
+{
+    lli LCM = (a*b)/__gcd(a,b);
+    return n/LCM;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>no_of_common_divisors_of_a_and_b</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

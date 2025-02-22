@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+#define M 1000000007
+lli bigMod(lli b, lli p)
+{
+    lli ans = 1;
+    while(p>0)
+    {
+        if(p&1)ans = (ans*b)%M;
+        b = (b*b)%M;
+        p/=2;
+    }
+    return ans;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bigMod()</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

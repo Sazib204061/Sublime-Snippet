@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+template<std::size_t SIZE>
+int bitSetToInt(std::bitset<SIZE> bitSet) {
+    if (!bitSet[SIZE - 1]) return bitSet.to_ulong();
+    bitSet.flip();
+    return -(bitSet.to_ulong() + 1);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bitset_to_int</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

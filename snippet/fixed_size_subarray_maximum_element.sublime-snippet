@@ -1,0 +1,34 @@
+<snippet>
+	<content><![CDATA[
+lli fixed_size_subarray_maximum_element(vector<lli>&ar, lli sz, lli b, lli e)
+{
+    //এখানে e-b+1=sz হতে হবে। sz change হলে কাজ করবে না।
+    //TC: O(N), SC: O(N);
+    lli n = ar.size();
+    vlli A(n), B(n);
+    for(lli i = 0; i<n; i++)
+    {
+        if(i%sz==0)
+        {
+            A[i] = ar[i];
+        }
+        else
+            A[i]=max(A[i-1], ar[i]);
+    }
+    for(lli i = n-1; i>=0; i--)
+    {
+        if(i%sz==0 || i==n-1)
+        {
+            B[i] = ar[i];
+        }
+        else
+            B[i] = max(B[i+1], ar[i]);
+    }
+    return max(B[b], A[e]);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fixed_size_subarray_maximum_element</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

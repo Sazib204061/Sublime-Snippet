@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+lli Sub_array_min_sum_in_K_size(vlli &ar, lli k)
+{  //this function return minimum sub array sum which size is k
+    lli cur = 0;
+    for (lli i = 0; i < k; i++)
+        cur += ar[i];
+    lli mn = cur;
+    for (lli i = k; i < ar.size(); i++) {
+        cur += ar[i] - ar[i - k];
+        mn = min(cur, mn);
+    }
+    return mn;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Sub_array_min_sum_in_K_size</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

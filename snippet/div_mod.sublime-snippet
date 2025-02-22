@@ -1,0 +1,43 @@
+<snippet>
+	<content><![CDATA[
+/*---------------------------------------*/
+//lli div_mod(string num, int m)    //যদি ভাগশেষ দরকার হয়
+string div_mod(string num, int m)   //যদি ভাগফল দরকার হয় 
+{ 
+
+       /*   m ) num    ( div 
+                number
+            ---------------
+                remainder
+        */
+    string div = "";
+    lli rem = 0;
+
+    for(lli i = 0; i<num.size(); i++)
+    {
+        rem = ((rem*1LL*10)+(num[i]-'0'));// এক ডিজিট নামাচ্ছি
+
+        if(rem>=m)   // যদি নিচের number টি ভাগ করা যায়
+        {
+            div+=(rem/m)+'0';
+        }
+        else               // যদি নিচের number টি ভাগ করা না যায়
+        {
+            if(div.size()){  //ভাগফল এর first digit 0 হতে দিবে না
+                div+='0';
+            }
+        }
+        rem%=m;
+    }    
+    //return rem; //যদি ভাগশেষ দরকার হয়
+    if(div.size()==0)div+='0'; //যদি একবার ও ভাগ করা না যায়
+    return div;       //যদি ভাগফল দরকার হয়
+}
+//call : cout<<div_mod("200001", 10);//output : 20000
+/*-------------------------------------*/
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>div_mod</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

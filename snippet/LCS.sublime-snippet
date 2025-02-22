@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+int LCS(int n, int m, string &s, string &t, vector<vector<int>>&dp)
+{
+    for(int i = 1; i<=n; i++)
+    {
+        for(int j = 1; j<=m; j++)
+        {
+            if(s[i-1]==t[j-1])dp[i][j] = 1+dp[i-1][j-1];
+            else
+            {
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+    }
+    return dp[n][m];
+}
+int longestCommonSubsequence(string text1, string text2) {
+    int n = text1.size(), m = text2.size();
+    vector<vector<int>>dp(n+1, vector<int>(m+1, 0));
+    return LCS(n, m, text1, text2, dp);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>LCS</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

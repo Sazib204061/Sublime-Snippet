@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+int countSubstring(const std::string& str, const std::string& sub)
+{
+	if (sub.length() == 0) return 0;
+	int count = 0;
+	for (size_t offset = str.find(sub); offset != std::string::npos;
+	offset = str.find(sub, offset + sub.length()))
+	{
+		++count;
+	}
+	return count;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Sub_string_occurance_count</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+lli extended_euclidian(lli a, lli b, lli &x, lli &y)
+{
+    if(b==0)
+    {
+        x = 1;
+        y = 0;
+        return a;//gcd
+    }
+    lli xx, yy;
+    lli g = extended_euclidian(b, a%b, xx, yy);
+    x = yy;
+    y = xx-yy*(a/b);
+    return g;
+    /*
+    lli x, y;
+    lli g = extended_euclidian(10, 6, x, y);
+    cout<<g<<" "<<x<<" "<<y<<nl;
+    output: 2 -1 2
+    */
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>extended_euclidian</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
